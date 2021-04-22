@@ -49,6 +49,7 @@ describe Enigma do
     it 'combines split_keys and offset_keys into 4 keys' do
       enigma = Enigma.new
       allow(enigma).to receive(:generate_5) {'02715'}
+      enigma.split_keys
       enigma.offset_keys('040895')
 
       expect(enigma.generate_offset).to eq ([3, 27, 73, 20])
