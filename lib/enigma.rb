@@ -32,6 +32,11 @@ class Enigma
   end
 
   def generate_offset(date)
-
+    squared = (date.to_i ** 2).to_s
+    squared_as_arry = squared.split('')
+    offset_keys = squared_as_arry.last(4)
+    offset_keys.map do |key|
+      key.to_i
+    end
   end
 end

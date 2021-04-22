@@ -39,6 +39,8 @@ describe Enigma do
   describe '#generate_offset' do
     it 'generates 4 offset keys' do
       enigma = Enigma.new
+
+      expect(enigma.generate_offset('040895')).to eq ([1, 0, 2, 5])
     end
   end
 
