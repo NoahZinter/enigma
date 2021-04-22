@@ -36,19 +36,18 @@ describe Enigma do
     end
   end
 
-  describe '#generate_offset' do
+  describe '#offset_keys' do
     it 'generates 4 offset keys' do
       enigma = Enigma.new
 
-      expect(enigma.generate_offset('040895')).to eq ([1, 0, 2, 5])
+      expect(enigma.offset_keys('040895')).to eq ([1, 0, 2, 5])
     end
   end
-
 
   describe '#encrypt' do
     xit 'returns a hash of encryption, key, date' do
       enigma = Enigma.new
-      # allow(enigma).to_receive(:generate_key).and return(02715)
+      allow(enigma).to receive(:generate_key) {'02715'}
       expect(enigma.encrypt('hello world', '02715', '040895')).to eq (
       {
         encryption: "keder ohulw",

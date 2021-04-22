@@ -12,9 +12,9 @@ class Enigma
     cipher
   end
 
-  def encode_string(string, key, date)
+  # def encode_string(string, key, date)
 
-  end
+  # end
 
   def generate_5
     5.times.map{rand(5)}.join
@@ -31,7 +31,7 @@ class Enigma
     key_array
   end
 
-  def generate_offset(date)
+  def offset_keys(date)
     squared = (date.to_i ** 2).to_s
     squared_as_arry = squared.split('')
     offset_keys = squared_as_arry.last(4)
@@ -39,4 +39,5 @@ class Enigma
       key.to_i
     end
   end
+
 end
