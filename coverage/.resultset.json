@@ -1,7 +1,31 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/nwz/mod_1_projects/4_project/spec/enigma_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nwz/mod_1_projects/4_project/lib/enigma.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      }
     },
-    "timestamp": 1619113406
+    "timestamp": 1619123979
   }
 }
