@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-22T17:24:15-06:00">2021-04-22T17:24:15-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-22T17:29:38-06:00">2021-04-22T17:29:38-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="yellow">
-  88.89%
+  88.73%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.86
+         1.87
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>72</b> relevant lines,
-    <span class="green"><b>64</b> lines covered</span> and
+    <b>71</b> relevant lines,
+    <span class="green"><b>63</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed. </span>
     (<span class="yellow">
-  88.89%
+  88.73%
 </span>
 )
   </div>
@@ -72,12 +72,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#720ec010f1e8b534c16de78ef7e2bb00edab9f19" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">85.29 %</td>
+            <td class="yellow strong cell--number t-file__coverage">84.85 %</td>
             <td class="cell--number">53</td>
-            <td class="cell--number">34</td>
-            <td class="cell--number">29</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">28</td>
             <td class="cell--number">5</td>
-            <td class="cell--number">2.85</td>
+            <td class="cell--number">2.91</td>
             
           </tr>
         
@@ -114,7 +114,7 @@
     <h3>lib/enigma.rb</h3>
     <h4>
       <span class="yellow">
-  85.29%
+  84.85%
 </span>
 
       lines covered
@@ -123,8 +123,8 @@
     
 
     <div class="t-line-summary">
-      <b>34</b> relevant lines.
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>33</b> relevant lines.
+      <span class="green"><b>28</b> lines covered</span> and
       <span class="red"><b>5</b> lines missed.</span>
     </div>
 
@@ -428,7 +428,7 @@
 
             
 
-            <code class="ruby">  def split_keys</code>
+            <code class="ruby">  def generate_key</code>
           </li>
         </div>
       
@@ -659,7 +659,7 @@
 
             
 
-            <code class="ruby">    h = @key.zip(@offset).map do |array|</code>
+            <code class="ruby">    @key.zip(@offset).map do |array|</code>
           </li>
         </div>
       
@@ -670,7 +670,7 @@
 
             
 
-            <code class="ruby">    array.sum</code>
+            <code class="ruby">      array.sum</code>
           </li>
         </div>
       
@@ -686,8 +686,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="51">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="51">
+            
             
 
             
@@ -1009,7 +1009,7 @@
 
             
 
-            <code class="ruby">      enigma.split_keys</code>
+            <code class="ruby">      enigma.generate_key</code>
           </li>
         </div>
       
@@ -1086,7 +1086,7 @@
 
             
 
-            <code class="ruby">  describe &#39;#split_keys&#39; do</code>
+            <code class="ruby">  describe &#39;#generate_key&#39; do</code>
           </li>
         </div>
       
@@ -1141,7 +1141,7 @@
 
             
 
-            <code class="ruby">      expect(enigma.split_keys).to eq ([12, 23, 34, 45])</code>
+            <code class="ruby">      expect(enigma.generate_key).to eq ([12, 23, 34, 45])</code>
           </li>
         </div>
       
@@ -1284,7 +1284,7 @@
 
             
 
-            <code class="ruby">    it &#39;combines split_keys and offset_keys into 4 keys&#39; do</code>
+            <code class="ruby">    it &#39;combines generate_key and offset_keys into 4 keys&#39; do</code>
           </li>
         </div>
       
@@ -1317,7 +1317,7 @@
 
             
 
-            <code class="ruby">      enigma.split_keys</code>
+            <code class="ruby">      enigma.generate_key</code>
           </li>
         </div>
       

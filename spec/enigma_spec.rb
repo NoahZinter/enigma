@@ -21,19 +21,19 @@ describe Enigma do
     it 'generates a random 5 digit number' do
       enigma = Enigma.new
       enigma.generate_5
-      enigma.split_keys
+      enigma.generate_key
 
       expect(enigma.generate_5).is_a? String
       expect(enigma.generate_5.length).to eq 5
     end
   end
 
-  describe '#split_keys' do
+  describe '#generate_key' do
     it 'splits a 5 character string into 4 keys' do
       enigma = Enigma.new
       allow(enigma).to receive(:generate_5) { '12345' }
 
-      expect(enigma.split_keys).to eq ([12, 23, 34, 45])
+      expect(enigma.generate_key).to eq ([12, 23, 34, 45])
     end
   end
 
@@ -46,10 +46,10 @@ describe Enigma do
   end
 
   describe '#generate_offset' do
-    it 'combines split_keys and offset_keys into 4 keys' do
+    it 'combines generate_key and offset_keys into 4 keys' do
       enigma = Enigma.new
       allow(enigma).to receive(:generate_5) {'02715'}
-      enigma.split_keys
+      enigma.generate_key
       enigma.offset_keys('040895')
 
       expect(enigma.generate_offset).to eq ([3, 27, 73, 20])

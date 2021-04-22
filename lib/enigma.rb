@@ -24,7 +24,7 @@ class Enigma
     5.times.map{rand(5)}.join
   end
 
-  def split_keys
+  def generate_key
     total_key = generate_5.split('')
     key_array = []
     key_a = total_key[0..1].join.to_i
@@ -45,8 +45,8 @@ class Enigma
   end
 
   def generate_offset
-    h = @key.zip(@offset).map do |array|
-    array.sum
+    @key.zip(@offset).map do |array|
+      array.sum
     end
   end
 
