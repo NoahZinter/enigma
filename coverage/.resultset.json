@@ -13,19 +13,44 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
       "/Users/nwz/mod_1_projects/4_project/lib/enigma.rb": {
         "lines": [
           1,
+          1,
+          1,
+          2,
+          null,
           null,
           1,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1619123979
+    "timestamp": 1619124768
   }
 }
