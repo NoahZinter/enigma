@@ -17,15 +17,15 @@ describe Enigma do
     end
   end
 
-  # describe '#encrypt' do
-  #   it 'returns a hash of encryption, key, date' do
-  #     enigma = Enigma.new
-  #     expect(enigma.encrypt('hello world', '02715', '040895')).to eq (
-  #     {
-  #       encryption: "keder ohulw",
-  #       key: "02715",
-  #       date: "040895"
-  #     })
-  #   end
-  # end
+  describe '#encrypt' do
+    it 'returns a hash of encryption, key, date' do
+      enigma = Enigma.new
+      expect(enigma.encrypt('hello world', '02715', '040895')).to eq (
+      {
+        encryption: "keder ohulw",
+        key: "02715",
+        date: "040895"
+      })
+    end
+  end
 end

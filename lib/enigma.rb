@@ -4,7 +4,11 @@ class Enigma
     @letters = ('a'..'z').to_a << ' '
   end
 
-  def encrypt
-
+  def encrypt(string, key, date)
+    cipher = Hash.new
+    cipher[:encryption] = string
+    cipher[:key] = key
+    cipher[:date] = date
+    cipher
   end
 end
