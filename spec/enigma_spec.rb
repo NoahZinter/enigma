@@ -45,14 +45,14 @@ describe Enigma do
     end
   end
 
-  describe '#generate_offset' do
+  describe '#generate_total_offset' do
     it 'combines generate_key and offset_keys into 4 keys' do
       enigma = Enigma.new
       allow(enigma).to receive(:generate_5) {'02715'}
       enigma.generate_key
       enigma.offset_keys('040895')
 
-      expect(enigma.generate_offset).to eq ([3, 27, 73, 20])
+      expect(enigma.generate_total_offset).to eq ([3, 27, 73, 20])
     end
   end
 

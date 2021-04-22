@@ -44,7 +44,7 @@ class Enigma
     end
   end
 
-  def generate_offset
+  def generate_total_offset
     @key.zip(@offset).map do |array|
       array.sum
     end
