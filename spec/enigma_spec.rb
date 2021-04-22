@@ -32,7 +32,13 @@ describe Enigma do
       enigma = Enigma.new
       allow(enigma).to receive(:generate_5) { '12345' }
 
-      expect(enigma.split_keys).to eq (['12', '23', '34', '45'])
+      expect(enigma.split_keys).to eq ([12, 23, 34, 45])
+    end
+  end
+
+  describe '#generate_offset' do
+    it 'generates 4 offset keys' do
+      enigma = Enigma.new
     end
   end
 
