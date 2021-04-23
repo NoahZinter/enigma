@@ -9,7 +9,7 @@ class Enigma
   def encrypt(message, key = nil, date = Date.today.to_s)
     key_conditional(key)
     offset_keys(date)
-    cipher = Hash.new
+    cipher = {}
     cipher[:encryption] = encode_message(message)
     cipher[:key] = key
     cipher[:date] = date
@@ -17,18 +17,16 @@ class Enigma
   end
 
   def key_conditional(key)
-    if key == nil
+    if key.nil?
       key = generate_5
       generate_key(key)
-    else 
+    else
       generate_key(key)
     end
   end
 
   def rotate_letters(letter)
-    rotation = @letters.find_index do |element|
-                  element == letter
-                end
+    rotation = @letters.find_index { |element| element == letter }
     oriented = @letters.rotate(rotation)
     oriented
   end
@@ -37,7 +35,7 @@ class Enigma
     return letter if !@letters.include?(letter) || letter == ' '
     starting = rotate_letters(letter)
     changed = starting.rotate(offset)
-    if changed.first == " "
+    if changed.first == ' '
       changed.rotate!(1)
       changed.first
     else
@@ -50,10 +48,10 @@ class Enigma
     elements = message.downcase.split('')
     repeat = elements.length
     encoded = []
-    repeat.times do
-      encoded << encode_letter(elements.first, offset.first)
-      elements.rotate!(1)
-      offset.rotate!(1)
+      repeat.times do
+        encoded << encode_letter(elements.first, offset.first)
+        elements.rotate!(1)
+        offset.rotate!(1)
       end
     encoded.join
   end
@@ -68,7 +66,7 @@ class Enigma
     key_b = total_key[1..2].join.to_i
     key_c = total_key[2..3].join.to_i
     key_d = total_key[3..4].join.to_i
-    key_array.push(key_a,key_b,key_c,key_d)
+    key_array.push(key_a, key_b, key_c, key_d)
     @key = key_array
   end
 
@@ -78,7 +76,7 @@ class Enigma
   end
 
   def offset_keys(date)
-    squared = (date.to_i ** 2).to_s
+    squared = (date.to_i**2).to_s
     squared_as_arry = squared.split('')
     offset_keys = squared_as_arry.last(4)
     @offset = offset_keys.map do |key|
