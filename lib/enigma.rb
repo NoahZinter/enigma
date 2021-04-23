@@ -1,5 +1,3 @@
-require 'matrix'
-
 class Enigma
   attr_reader :letters, :key, :offset
   def initialize
