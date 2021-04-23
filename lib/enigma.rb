@@ -8,7 +8,7 @@ class Enigma
     @offset = offset
   end
 
-  def encrypt(string, key = split_keys, date = Date.today)
+  def encrypt(string, key = generate_key, date = Date.today)
     cipher = Hash.new
     cipher[:encryption] = encode_string(string, key, date)
     cipher[:key] = key
@@ -16,9 +16,13 @@ class Enigma
     cipher
   end
 
-  # def encode_string(string, key, date)
-
-  # end
+  def rotate_letters(input)
+    rotation = @letters.find_index do |letter|
+                  letter == input
+                end
+    oriented = @letters.rotate(rotation)
+    oriented
+  end
 
   def generate_5
     5.times.map{rand(5)}.join
@@ -49,5 +53,4 @@ class Enigma
       array.sum
     end
   end
-
 end

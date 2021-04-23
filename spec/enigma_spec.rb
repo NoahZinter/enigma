@@ -56,6 +56,14 @@ describe Enigma do
     end
   end
 
+  describe '#rotate_letters' do
+    it 'rotates the letters array to begin with given letter' do
+      enigma = Enigma.new
+      expect(enigma.rotate_letters('h').first).to eq 'h'
+      expect(enigma.rotate_letters('z').first).to eq 'z'
+    end
+  end
+
   describe '#encrypt' do
     xit 'returns a hash of encryption, key, date' do
       enigma = Enigma.new
