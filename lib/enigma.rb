@@ -35,6 +35,7 @@ class Enigma
   end
 
   def encode_message(message)
+    message = message.downcase
     offset = generate_total_offset
     elements = message.split('')
     repeat = elements.length

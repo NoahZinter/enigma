@@ -114,6 +114,16 @@ describe Enigma do
 
       expect(enigma.encode_message(message)).to eq 'keder ohulw'
     end
+
+    it 'can handle incorrect inputs' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:generate_5) {'02715'}
+      enigma.generate_key
+      enigma.offset_keys('040895')
+      message = 'HeLlO WoRlD!!?'
+
+      expect(enigma.encode_message(message)).to eq 'keder ohulw!!?'
+    end
   end
 
   # describe '#encrypt' do
