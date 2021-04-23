@@ -85,6 +85,14 @@ describe Enigma do
 
       expect(enigma.decode_letter('a', 1)).to eq 'z'
     end
+
+    it 'will leave non-registered characters alone' do
+      enigma = Enigma.new
+      enigma.generate_key('002715')
+      enigma.offset_keys('040895')
+
+      expect(enigma.decode_letter('?', 14)).to eq '?'
+    end
   end
 
   describe '#encode_letter' do
