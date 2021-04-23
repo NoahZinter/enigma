@@ -16,6 +16,16 @@ class Enigma
     cipher
   end
 
+  def decrypt(message, key = nil, date = Date.today.to_s)
+    key_conditional(key)
+    offset_keys(date)
+    decipher = {}
+    decipher[:encryption] = decode_message(message)
+    decipher[:key] = key
+    decipher[:date] = date
+    decipher
+  end
+
   def key_conditional(key)
     if key.nil?
       key = generate_5
