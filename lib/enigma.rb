@@ -6,13 +6,15 @@ class Enigma
     @offset = offset
   end
 
-  # def encrypt(message, key = generate_key, date = Date.today)
-  #   cipher = Hash.new
-  #   cipher[:encryption] = encode_string(message, key, date)
-  #   cipher[:key] = key
-  #   cipher[:date] = date
-  #   cipher
-  # end
+  def encrypt(message, key = nil, date = Date.today)
+    offset_keys(date)
+    generate_key(key)
+    cipher = Hash.new
+    cipher[:encryption] = encode_message(message)
+    cipher[:key] = key
+    cipher[:date] = date
+    cipher
+  end
 
   def rotate_letters(letter)
     rotation = @letters.find_index do |element|
@@ -35,9 +37,8 @@ class Enigma
   end
 
   def encode_message(message)
-    message = message.downcase
     offset = generate_total_offset
-    elements = message.split('')
+    elements = message.downcase.split('')
     repeat = elements.length
     encoded = []
     repeat.times do
@@ -52,8 +53,12 @@ class Enigma
     5.times.map{rand(5)}.join
   end
 
-  def generate_key
-    total_key = generate_5.split('')
+  def generate_key(key = nil)
+    if key == nil 
+      total_key = generate_5.split('')
+    else 
+      total_key = key.split('')
+    end
     key_array = []
     key_a = total_key[0..1].join.to_i
     key_b = total_key[1..2].join.to_i
