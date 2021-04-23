@@ -7,18 +7,22 @@ class Enigma
   end
 
   def encrypt(message, key = nil, date = Date.today.to_s)
-    if key == nil
-      key = generate_5
-      generate_key(key)
-    else 
-      generate_key(key)
-    end
+    key_conditional(key)
     offset_keys(date)
     cipher = Hash.new
     cipher[:encryption] = encode_message(message)
     cipher[:key] = key
     cipher[:date] = date
     cipher
+  end
+
+  def key_conditional(key)
+    if key == nil
+      key = generate_5
+      generate_key(key)
+    else 
+      generate_key(key)
+    end
   end
 
   def rotate_letters(letter)
