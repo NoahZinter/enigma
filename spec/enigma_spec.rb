@@ -38,7 +38,7 @@ describe Enigma do
   describe '#assign_keys' do
     it 'splits a 5 character string into 4 keys' do
       enigma = Enigma.new
-      total_key = ['1', '2', '3',' 4', '5']
+      total_key = ['1', '2', '3','4', '5']
       expect(enigma.assign_keys(total_key)).to eq ([12, 23, 34, 45])
     end
   end
@@ -66,6 +66,16 @@ describe Enigma do
       enigma = Enigma.new
       expect(enigma.rotate_letters('h').first).to eq 'h'
       expect(enigma.rotate_letters('z').first).to eq 'z'
+    end
+  end
+
+  describe '#decode_letter' do
+    it 'decodes a letter' do
+      enigma = Enigma.new
+      enigma.generate_key('002715')
+      enigma.offset_keys('040895')
+
+      expect(enigma.decode_letter('k', 3)).to eq 'h'
     end
   end
 
@@ -142,6 +152,7 @@ describe Enigma do
       enigma = Enigma.new
       expected = enigma.encrypt('hello')
       today = Date.today.to_s
+      require 'pry'; binding.pry
 
       expect(expected[:key]).is_a? String
       expect(expected[:date]).to eq today
