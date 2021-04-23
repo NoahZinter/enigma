@@ -77,6 +77,14 @@ describe Enigma do
 
       expect(enigma.decode_letter('k', 3)).to eq 'h'
     end
+
+    it 'will move to the next letter if it lands on a space' do
+      enigma = Enigma.new
+      enigma.generate_key('002715')
+      enigma.offset_keys('040895')
+
+      expect(enigma.decode_letter('a', 1)).to eq 'z'
+    end
   end
 
   describe '#encode_letter' do
@@ -152,7 +160,6 @@ describe Enigma do
       enigma = Enigma.new
       expected = enigma.encrypt('hello')
       today = Date.today.to_s
-      require 'pry'; binding.pry
 
       expect(expected[:key]).is_a? String
       expect(expected[:date]).to eq today

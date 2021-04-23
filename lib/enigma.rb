@@ -43,6 +43,19 @@ class Enigma
     end
   end
 
+  def decode_letter(letter, offset)
+    return letter if !@letters.include?(letter) || letter == ' '
+    offset = (offset * -1)
+    starting = rotate_letters(letter)
+    changed = starting.rotate(offset)
+    if changed.first == ' '
+      changed.rotate!(-1)
+      changed.first
+    else
+      changed.first
+    end
+  end
+
   def encode_message(message)
     offset = generate_total_offset
     elements = message.downcase.split('')
