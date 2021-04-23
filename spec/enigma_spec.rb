@@ -104,17 +104,17 @@ describe Enigma do
     end
   end
 
-  # describe '#encode_message' do
-  #   it 'encodes a message' do
-  #     enigma = Enigma.new
-  #     allow(enigma).to receive(:generate_5) {'02715'}
-  #     enigma.generate_key
-  #     enigma.offset_keys('040895')
-  #     message = 'hello world'
+  describe '#encode_message' do
+    it 'encodes a message' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:generate_5) {'02715'}
+      enigma.generate_key
+      enigma.offset_keys('040895')
+      message = 'hello world'
 
-  #     encode_message(enigma.encode_message)
-  #   end
-  # end
+      expect(enigma.encode_message(message)).to eq 'keder ohulw'
+    end
+  end
 
   # describe '#encrypt' do
   #   it 'returns a hash of encryption, key, date' do
