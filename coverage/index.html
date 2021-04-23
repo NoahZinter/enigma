@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-22T19:23:55-06:00">2021-04-22T19:23:55-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-23T10:48:40-06:00">2021-04-23T10:48:40-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.33
+         3.39
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>98</b> relevant lines,
-    <span class="green"><b>98</b> lines covered</span> and
+    <b>104</b> relevant lines,
+    <span class="green"><b>104</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,22 +73,22 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#720ec010f1e8b534c16de78ef7e2bb00edab9f19" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">66</td>
+            <td class="cell--number">70</td>
             <td class="cell--number">39</td>
             <td class="cell--number">39</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">6.72</td>
+            <td class="cell--number">7.23</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#74cab313fbb205ddfdb93c8f1fd3e0da2e3d8bff" class="src_link" title="spec/enigma_spec.rb">spec/enigma_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">110</td>
-            <td class="cell--number">59</td>
-            <td class="cell--number">59</td>
+            <td class="cell--number">132</td>
+            <td class="cell--number">65</td>
+            <td class="cell--number">65</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.08</td>
+            <td class="cell--number">1.09</td>
             
           </tr>
         
@@ -169,8 +169,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="4">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="11" data-linenumber="4">
+            <span class="hits">11</span>
             
 
             
@@ -180,8 +180,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="5">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="11" data-linenumber="5">
+            <span class="hits">11</span>
             
 
             
@@ -191,8 +191,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="6">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="11" data-linenumber="6">
+            <span class="hits">11</span>
             
 
             
@@ -230,7 +230,7 @@
 
             
 
-            <code class="ruby">  # def encrypt(string, key = generate_key, date = Date.today)</code>
+            <code class="ruby">  # def encrypt(message, key = generate_key, date = Date.today)</code>
           </li>
         </div>
       
@@ -252,7 +252,7 @@
 
             
 
-            <code class="ruby">  #   cipher[:encryption] = encode_string(string, key, date)</code>
+            <code class="ruby">  #   cipher[:encryption] = encode_string(message, key, date)</code>
           </li>
         </div>
       
@@ -411,13 +411,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="26">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="26">
+            <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">    return letter if !@letters.include?(letter)</code>
+            <code class="ruby">    return letter if !@letters.include?(letter) || letter == &#39; &#39;</code>
           </li>
         </div>
       
@@ -532,24 +532,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="37">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="37">
+            
             
 
             
 
-            <code class="ruby">  def generate_5</code>
+            <code class="ruby">  # def encode_message(message)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="24" data-linenumber="38">
-            <span class="hits">24</span>
+          <li class="never" data-hits="" data-linenumber="38">
+            
             
 
             
 
-            <code class="ruby">    5.times.map{rand(5)}.join</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -560,7 +560,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  # end</code>
           </li>
         </div>
       
@@ -582,100 +582,23 @@
 
             
 
-            <code class="ruby">  def generate_key</code>
+            <code class="ruby">  def generate_5</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="42">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="24" data-linenumber="42">
+            <span class="hits">24</span>
             
 
             
 
-            <code class="ruby">    total_key = generate_5.split(&#39;&#39;)</code>
+            <code class="ruby">    5.times.map{rand(5)}.join</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="43">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    key_array = []</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="44">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    key_a = total_key[0..1].join.to_i</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="45">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    key_b = total_key[1..2].join.to_i</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="46">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    key_c = total_key[2..3].join.to_i</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="47">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    key_d = total_key[3..4].join.to_i</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="48">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    key_array.push(key_a,key_b,key_c,key_d)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="49">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    @key = key_array</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="50">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
@@ -686,7 +609,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="51">
+          <li class="never" data-hits="" data-linenumber="44">
             
             
 
@@ -697,7 +620,128 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="52">
+          <li class="covered" data-hits="1" data-linenumber="45">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def generate_key</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="46">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    total_key = generate_5.split(&#39;&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="47">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_array = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="48">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_a = total_key[0..1].join.to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="49">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_b = total_key[1..2].join.to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="50">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_c = total_key[2..3].join.to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="51">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_d = total_key[3..4].join.to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="52">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_array.push(key_a,key_b,key_c,key_d)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="53">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    @key = key_array</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="56">
             <span class="hits">1</span>
             
 
@@ -708,8 +752,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="53">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="57">
+            <span class="hits">6</span>
             
 
             
@@ -719,8 +763,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="54">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="58">
+            <span class="hits">6</span>
             
 
             
@@ -730,8 +774,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="55">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="59">
+            <span class="hits">6</span>
             
 
             
@@ -741,8 +785,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="56">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="60">
+            <span class="hits">6</span>
             
 
             
@@ -752,8 +796,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="57">
-            <span class="hits">20</span>
+          <li class="covered" data-hits="24" data-linenumber="61">
+            <span class="hits">24</span>
             
 
             
@@ -763,7 +807,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="58">
+          <li class="never" data-hits="" data-linenumber="62">
             
             
 
@@ -774,57 +818,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="63">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="60">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="61">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def generate_total_offset</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    @key.zip(@offset).map do |array|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="63">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">      array.sum</code>
           </li>
         </div>
       
@@ -835,12 +835,56 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="65">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def generate_total_offset</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="66">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @key.zip(@offset).map do |array|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="67">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">      array.sum</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="68">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
+          <li class="never" data-hits="" data-linenumber="69">
             
             
 
@@ -851,7 +895,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="66">
+          <li class="never" data-hits="" data-linenumber="70">
             
             
 
@@ -880,8 +924,8 @@
     
 
     <div class="t-line-summary">
-      <b>59</b> relevant lines.
-      <span class="green"><b>59</b> lines covered</span> and
+      <b>65</b> relevant lines.
+      <span class="green"><b>65</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1944,62 +1988,62 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="97">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="98">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="97">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # describe &#39;#encrypt&#39; do</code>
+            
+
+            <code class="ruby">    it &#39;will return a space if given a space&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="99">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="98">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  #   xit &#39;returns a hash of encryption, key, date&#39; do</code>
+            
+
+            <code class="ruby">      enigma = Enigma.new</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="100">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="99">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">  #     enigma = Enigma.new</code>
+            
+
+            <code class="ruby">      allow(enigma).to receive(:generate_5) {&#39;02715&#39;}</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="101">
+          <li class="covered" data-hits="1" data-linenumber="100">
+            <span class="hits">1</span>
             
+
+            
+
+            <code class="ruby">      enigma.generate_key</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="101">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  #     allow(enigma).to receive(:generate_key) {&#39;02715&#39;}</code>
+            <code class="ruby">      enigma.offset_keys(&#39;040895&#39;)</code>
           </li>
         </div>
       
@@ -2010,18 +2054,18 @@
 
             
 
-            <code class="ruby">  #     expect(enigma.encrypt(&#39;hello world&#39;, &#39;02715&#39;, &#39;040895&#39;)).to eq (</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="103">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="103">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  #     {</code>
+            
+
+            <code class="ruby">      expect(enigma.encode_letter(&#39; &#39;, 18)).to eq &#39; &#39;</code>
           </li>
         </div>
       
@@ -2032,7 +2076,7 @@
 
             
 
-            <code class="ruby">  #       encryption: &quot;keder ohulw&quot;,</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2043,7 +2087,7 @@
 
             
 
-            <code class="ruby">  #       key: &quot;02715&quot;,</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2054,7 +2098,7 @@
 
             
 
-            <code class="ruby">  #       date: &quot;040895&quot;</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2065,7 +2109,7 @@
 
             
 
-            <code class="ruby">  #     })</code>
+            <code class="ruby">  # describe &#39;#encode_message&#39; do</code>
           </li>
         </div>
       
@@ -2076,7 +2120,7 @@
 
             
 
-            <code class="ruby">  #   end</code>
+            <code class="ruby">  #   it &#39;encodes a message&#39; do</code>
           </li>
         </div>
       
@@ -2087,12 +2131,254 @@
 
             
 
-            <code class="ruby">  # end</code>
+            <code class="ruby">  #     enigma = Enigma.new</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="110">
+            
+            
+
+            
+
+            <code class="ruby">  #     allow(enigma).to receive(:generate_5) {&#39;02715&#39;}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="111">
+            
+            
+
+            
+
+            <code class="ruby">  #     enigma.generate_key</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="112">
+            
+            
+
+            
+
+            <code class="ruby">  #     enigma.offset_keys(&#39;040895&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="113">
+            
+            
+
+            
+
+            <code class="ruby">  #     message = &#39;hello world&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="114">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="115">
+            
+            
+
+            
+
+            <code class="ruby">  #     encode_message(enigma.encode_message)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="116">
+            
+            
+
+            
+
+            <code class="ruby">  #   end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="117">
+            
+            
+
+            
+
+            <code class="ruby">  # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="118">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="119">
+            
+            
+
+            
+
+            <code class="ruby">  # describe &#39;#encrypt&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="120">
+            
+            
+
+            
+
+            <code class="ruby">  #   it &#39;returns a hash of encryption, key, date&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="121">
+            
+            
+
+            
+
+            <code class="ruby">  #     enigma = Enigma.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="122">
+            
+            
+
+            
+
+            <code class="ruby">  #     allow(enigma).to receive(:generate_key) {&#39;02715&#39;}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="123">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="124">
+            
+            
+
+            
+
+            <code class="ruby">  #     expect(enigma.encrypt(&#39;hello world&#39;, &#39;02715&#39;, &#39;040895&#39;)).to eq (</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="125">
+            
+            
+
+            
+
+            <code class="ruby">  #     {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="126">
+            
+            
+
+            
+
+            <code class="ruby">  #       encryption: &quot;keder ohulw&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="127">
+            
+            
+
+            
+
+            <code class="ruby">  #       key: &quot;02715&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="128">
+            
+            
+
+            
+
+            <code class="ruby">  #       date: &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="129">
+            
+            
+
+            
+
+            <code class="ruby">  #     })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="130">
+            
+            
+
+            
+
+            <code class="ruby">  #   end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="131">
+            
+            
+
+            
+
+            <code class="ruby">  # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="132">
             
             
 

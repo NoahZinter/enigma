@@ -93,12 +93,34 @@ describe Enigma do
       expect(enigma.encode_letter('!', 23)).to eq '!'
       expect(enigma.encode_letter('?', 12)).to eq '?'
     end
+
+    it 'will return a space if given a space' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:generate_5) {'02715'}
+      enigma.generate_key
+      enigma.offset_keys('040895')
+
+      expect(enigma.encode_letter(' ', 18)).to eq ' '
+    end
   end
 
+  # describe '#encode_message' do
+  #   it 'encodes a message' do
+  #     enigma = Enigma.new
+  #     allow(enigma).to receive(:generate_5) {'02715'}
+  #     enigma.generate_key
+  #     enigma.offset_keys('040895')
+  #     message = 'hello world'
+
+  #     encode_message(enigma.encode_message)
+  #   end
+  # end
+
   # describe '#encrypt' do
-  #   xit 'returns a hash of encryption, key, date' do
+  #   it 'returns a hash of encryption, key, date' do
   #     enigma = Enigma.new
   #     allow(enigma).to receive(:generate_key) {'02715'}
+
   #     expect(enigma.encrypt('hello world', '02715', '040895')).to eq (
   #     {
   #       encryption: "keder ohulw",

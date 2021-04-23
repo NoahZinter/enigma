@@ -6,9 +6,9 @@ class Enigma
     @offset = offset
   end
 
-  # def encrypt(string, key = generate_key, date = Date.today)
+  # def encrypt(message, key = generate_key, date = Date.today)
   #   cipher = Hash.new
-  #   cipher[:encryption] = encode_string(string, key, date)
+  #   cipher[:encryption] = encode_string(message, key, date)
   #   cipher[:key] = key
   #   cipher[:date] = date
   #   cipher
@@ -23,7 +23,7 @@ class Enigma
   end
 
   def encode_letter(letter, offset)
-    return letter if !@letters.include?(letter)
+    return letter if !@letters.include?(letter) || letter == ' '
     starting = rotate_letters(letter)
     changed = starting.rotate(offset)
     if changed.first == " "
@@ -33,6 +33,10 @@ class Enigma
       changed.first
     end
   end
+
+  # def encode_message(message)
+
+  # end
 
   def generate_5
     5.times.map{rand(5)}.join
