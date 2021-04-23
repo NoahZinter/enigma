@@ -151,6 +151,26 @@ describe Enigma do
     end
   end
 
+  describe '#decode_message' do
+    it 'decodes a message' do
+      enigma = Enigma.new
+      enigma.generate_key('02715')
+      enigma.offset_keys('040895')
+      message = 'keder ohulw'
+
+      expect(enigma.decode_message(message)).to eq 'hello world'
+    end
+
+    it 'can handle incorrect inputs' do
+      enigma = Enigma.new
+      enigma.generate_key('02715')
+      enigma.offset_keys('040895')
+      message = 'kEdeR oHulW!&?'
+
+      expect(enigma.decode_message(message)).to eq 'hello world!&?'
+    end
+  end
+
   describe '#encrypt' do
     it 'returns a hash of encryption, key, date' do
       enigma = Enigma.new

@@ -56,6 +56,19 @@ class Enigma
     end
   end
 
+  def decode_message(message)
+    offset = generate_total_offset
+    elements = message.downcase.split('')
+    repeat = elements.length
+    encoded = []
+      repeat.times do
+        encoded << decode_letter(elements.first, offset.first)
+        elements.rotate!(1)
+        offset.rotate!(1)
+      end
+    encoded.join
+  end
+
   def encode_message(message)
     offset = generate_total_offset
     elements = message.downcase.split('')
