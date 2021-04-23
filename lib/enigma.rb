@@ -68,13 +68,8 @@ class Enigma
     @key = key_array
   end
 
-  def generate_key(key = nil)
-    if key == nil 
-      key = generate_5
-      total_key = key.split('')
-    else 
-      total_key = key.split('')
-    end
+  def generate_key(key)
+    total_key = key.split('')
     assign_keys(total_key)
   end
 

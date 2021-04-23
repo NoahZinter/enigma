@@ -21,7 +21,6 @@ describe Enigma do
     it 'generates a random 5 digit number' do
       enigma = Enigma.new
       enigma.generate_5
-      enigma.generate_key
 
       expect(enigma.generate_5).is_a? String
       expect(enigma.generate_5.length).to eq 5
@@ -31,9 +30,8 @@ describe Enigma do
   describe '#generate_key' do
     it 'splits a 5 character string into 4 keys' do
       enigma = Enigma.new
-      allow(enigma).to receive(:generate_5) { '12345' }
 
-      expect(enigma.generate_key).to eq ([12, 23, 34, 45])
+      expect(enigma.generate_key('12345')).to eq ([12, 23, 34, 45])
     end
   end
 
@@ -56,8 +54,7 @@ describe Enigma do
   describe '#generate_total_offset' do
     it 'combines generate_key and offset_keys into 4 keys' do
       enigma = Enigma.new
-      allow(enigma).to receive(:generate_5) {'02715'}
-      enigma.generate_key
+      enigma.generate_key('02715')
       enigma.offset_keys('040895')
 
       expect(enigma.generate_total_offset).to eq ([3, 27, 73, 20])
@@ -75,8 +72,7 @@ describe Enigma do
   describe '#encode_letter' do
     it 'changes the letter according to total offset' do
       enigma = Enigma.new
-      allow(enigma).to receive(:generate_5) {'02715'}
-      enigma.generate_key
+      enigma.generate_key('02715')
       enigma.offset_keys('040895')
 
       expect(enigma.encode_letter('h', 3)).to eq 'k'
@@ -85,8 +81,7 @@ describe Enigma do
 
     it 'will move to the next letter if it lands on a space' do
       enigma = Enigma.new
-      allow(enigma).to receive(:generate_5) {'02715'}
-      enigma.generate_key
+      enigma.generate_key('02715')
       enigma.offset_keys('040895')
 
       expect(enigma.encode_letter('z', 1)).to eq 'a'
@@ -94,8 +89,7 @@ describe Enigma do
 
     it 'will return any character not in @letters array' do
       enigma = Enigma.new
-      allow(enigma).to receive(:generate_5) {'02715'}
-      enigma.generate_key
+      enigma.generate_key('02715')
       enigma.offset_keys('040895')
 
       expect(enigma.encode_letter('!', 23)).to eq '!'
@@ -104,8 +98,7 @@ describe Enigma do
 
     it 'will return a space if given a space' do
       enigma = Enigma.new
-      allow(enigma).to receive(:generate_5) {'02715'}
-      enigma.generate_key
+      enigma.generate_key('02715')
       enigma.offset_keys('040895')
 
       expect(enigma.encode_letter(' ', 18)).to eq ' '
@@ -115,8 +108,7 @@ describe Enigma do
   describe '#encode_message' do
     it 'encodes a message' do
       enigma = Enigma.new
-      allow(enigma).to receive(:generate_5) {'02715'}
-      enigma.generate_key
+      enigma.generate_key('02715')
       enigma.offset_keys('040895')
       message = 'hello world'
 
@@ -125,8 +117,7 @@ describe Enigma do
 
     it 'can handle incorrect inputs' do
       enigma = Enigma.new
-      allow(enigma).to receive(:generate_5) {'02715'}
-      enigma.generate_key
+      enigma.generate_key('02715')
       enigma.offset_keys('040895')
       message = 'HeLlO WoRlD!&?'
 
