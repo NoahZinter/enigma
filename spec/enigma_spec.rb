@@ -37,6 +37,14 @@ describe Enigma do
     end
   end
 
+  describe '#assign_keys' do
+    it 'splits a 5 character string into 4 keys' do
+      enigma = Enigma.new
+      total_key = ['1','2','3','4','5']
+      expect(enigma.assign_keys(total_key)).to eq ([12, 23, 34, 45])
+    end
+  end
+
   describe '#offset_keys' do
     it 'generates 4 offset keys' do
       enigma = Enigma.new
@@ -129,14 +137,23 @@ describe Enigma do
   describe '#encrypt' do
     it 'returns a hash of encryption, key, date' do
       enigma = Enigma.new
-      # allow(enigma).to receive(:generate_key) {'02715'}
 
-      expect(enigma.encrypt('hello world', '02715', '040895')).to eq (
+      expected = (
       {
         encryption: "keder ohulw",
         key: "02715",
         date: "040895"
       })
+      expect(enigma.encrypt('hello world', '02715', '040895')).to eq expected
+    end
+
+    it 'can return a full hash when only given a message' do
+      enigma = Enigma.new
+      expected = enigma.encrypt('hello')
+      today = Date.today.to_s
+
+      expect(expected[:key]).is_a? String
+      expect(expected[:date]).to eq today
     end
   end
 end

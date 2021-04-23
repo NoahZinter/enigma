@@ -6,9 +6,14 @@ class Enigma
     @offset = offset
   end
 
-  def encrypt(message, key = nil, date = Date.today)
+  def encrypt(message, key = nil, date = Date.today.to_s)
+    if key == nil
+      key = generate_5
+      generate_key(key)
+    else 
+      generate_key(key)
+    end
     offset_keys(date)
-    generate_key(key)
     cipher = Hash.new
     cipher[:encryption] = encode_message(message)
     cipher[:key] = key
@@ -53,12 +58,7 @@ class Enigma
     5.times.map{rand(5)}.join
   end
 
-  def generate_key(key = nil)
-    if key == nil 
-      total_key = generate_5.split('')
-    else 
-      total_key = key.split('')
-    end
+  def assign_keys(total_key)
     key_array = []
     key_a = total_key[0..1].join.to_i
     key_b = total_key[1..2].join.to_i
@@ -66,6 +66,16 @@ class Enigma
     key_d = total_key[3..4].join.to_i
     key_array.push(key_a,key_b,key_c,key_d)
     @key = key_array
+  end
+
+  def generate_key(key = nil)
+    if key == nil 
+      key = generate_5
+      total_key = key.split('')
+    else 
+      total_key = key.split('')
+    end
+    assign_keys(total_key)
   end
 
   def offset_keys(date)
