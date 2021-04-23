@@ -16,12 +16,18 @@ class Enigma
     cipher
   end
 
-  def rotate_letters(input)
-    rotation = @letters.find_index do |letter|
-                  letter == input
+  def rotate_letters(letter)
+    rotation = @letters.find_index do |element|
+                  element == letter
                 end
     oriented = @letters.rotate(rotation)
     oriented
+  end
+
+  def encode_letter(letter, offset)
+    starting = rotate_letters(letter)
+    changed = starting.rotate(offset)
+    changed.first
   end
 
   def generate_5

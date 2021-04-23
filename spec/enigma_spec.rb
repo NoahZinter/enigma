@@ -64,6 +64,18 @@ describe Enigma do
     end
   end
 
+  describe '#encode_letter' do
+    it 'changes the letter according to total offset' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:generate_5) {'02715'}
+      enigma.generate_key
+      enigma.offset_keys('040895')
+
+      expect(enigma.encode_letter('h', 3)).to eq 'k'
+      expect(enigma.encode_letter('e', 27)).to eq 'e'
+    end
+  end
+
   describe '#encrypt' do
     xit 'returns a hash of encryption, key, date' do
       enigma = Enigma.new
