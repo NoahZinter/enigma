@@ -193,4 +193,18 @@ describe Enigma do
       expect(expected[:date]).to eq today
     end
   end
+
+  describe '#decrypt' do
+    it 'returns a hash of message, key, date' do
+      enigma = Enigma.new
+
+      expected = (
+      {
+        encryption: 'hello world',
+        key: '02715',
+        date: '040895'
+      })
+      expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq expected
+    end
+  end
 end
