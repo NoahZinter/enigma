@@ -27,7 +27,12 @@ class Enigma
   def encode_letter(letter, offset)
     starting = rotate_letters(letter)
     changed = starting.rotate(offset)
-    changed.first
+    if changed.first == " "
+      changed.rotate!(1)
+      changed.first
+    else
+      changed.first
+    end
   end
 
   def generate_5

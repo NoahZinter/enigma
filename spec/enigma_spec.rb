@@ -74,6 +74,15 @@ describe Enigma do
       expect(enigma.encode_letter('h', 3)).to eq 'k'
       expect(enigma.encode_letter('e', 27)).to eq 'e'
     end
+
+    it 'will move to the next letter if it lands on a space' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:generate_5) {'02715'}
+      enigma.generate_key
+      enigma.offset_keys('040895')
+
+      expect(enigma.encode_letter('z', 1)).to eq 'a'
+    end
   end
 
   describe '#encrypt' do
