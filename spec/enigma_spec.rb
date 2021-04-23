@@ -83,6 +83,16 @@ describe Enigma do
 
       expect(enigma.encode_letter('z', 1)).to eq 'a'
     end
+
+    it 'will return any character not in @letters array' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:generate_5) {'02715'}
+      enigma.generate_key
+      enigma.offset_keys('040895')
+
+      expect(enigma.encode_letter('!', 23)).to eq '!'
+      expect(enigma.encode_letter('?', 12)).to eq '?'
+    end
   end
 
   describe '#encrypt' do

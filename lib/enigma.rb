@@ -23,6 +23,7 @@ class Enigma
   end
 
   def encode_letter(letter, offset)
+    return letter if !@letters.include?(letter)
     starting = rotate_letters(letter)
     changed = starting.rotate(offset)
     if changed.first == " "
