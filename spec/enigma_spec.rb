@@ -95,16 +95,16 @@ describe Enigma do
     end
   end
 
-  describe '#encrypt' do
-    xit 'returns a hash of encryption, key, date' do
-      enigma = Enigma.new
-      allow(enigma).to receive(:generate_key) {'02715'}
-      expect(enigma.encrypt('hello world', '02715', '040895')).to eq (
-      {
-        encryption: "keder ohulw",
-        key: "02715",
-        date: "040895"
-      })
-    end
-  end
+  # describe '#encrypt' do
+  #   xit 'returns a hash of encryption, key, date' do
+  #     enigma = Enigma.new
+  #     allow(enigma).to receive(:generate_key) {'02715'}
+  #     expect(enigma.encrypt('hello world', '02715', '040895')).to eq (
+  #     {
+  #       encryption: "keder ohulw",
+  #       key: "02715",
+  #       date: "040895"
+  #     })
+  #   end
+  # end
 end

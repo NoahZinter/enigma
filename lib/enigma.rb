@@ -6,13 +6,13 @@ class Enigma
     @offset = offset
   end
 
-  def encrypt(string, key = generate_key, date = Date.today)
-    cipher = Hash.new
-    cipher[:encryption] = encode_string(string, key, date)
-    cipher[:key] = key
-    cipher[:date] = date
-    cipher
-  end
+  # def encrypt(string, key = generate_key, date = Date.today)
+  #   cipher = Hash.new
+  #   cipher[:encryption] = encode_string(string, key, date)
+  #   cipher[:key] = key
+  #   cipher[:date] = date
+  #   cipher
+  # end
 
   def rotate_letters(letter)
     rotation = @letters.find_index do |element|
