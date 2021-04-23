@@ -38,7 +38,7 @@ describe Enigma do
   describe '#assign_keys' do
     it 'splits a 5 character string into 4 keys' do
       enigma = Enigma.new
-      total_key = ['1','2','3','4','5']
+      total_key = ['1', '2', '3',' 4', '5']
       expect(enigma.assign_keys(total_key)).to eq ([12, 23, 34, 45])
     end
   end
@@ -131,9 +131,9 @@ describe Enigma do
 
       expected = (
       {
-        encryption: "keder ohulw",
-        key: "02715",
-        date: "040895"
+        encryption: 'keder ohulw',
+        key: '02715',
+        date: '040895'
       })
       expect(enigma.encrypt('hello world', '02715', '040895')).to eq expected
     end
