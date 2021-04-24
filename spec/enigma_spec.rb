@@ -188,7 +188,7 @@ describe Enigma do
       allow(Date).to receive(:today).and_return Date.new(2021,01,31)
       enigma = Enigma.new
       expected = enigma.encrypt('hello')
-      # require 'pry'; binding.pry
+
       expect(expected[:key]).is_a? String
       expect(expected[:key].length).to eq 5
       expect(expected[:date]).to eq '013121'
@@ -208,16 +208,15 @@ describe Enigma do
       expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq expected
     end
 
-    xit 'can decrypt using todays date' do
+    it 'can decrypt using todays date' do
+      allow(Date).to receive(:today).and_return Date.new(2021,01,31)
       enigma = Enigma.new
       encrypted = enigma.encrypt('hello world', '02715')
-
-      require 'pry'; binding.pry
 
       expect(enigma.decrypt(encrypted[:encryption], '02715')).to eq ({
         decryption: 'hello world',
         key: '02715',
-        date: '042421'
+        date: '013121'
       })
     end
   end
