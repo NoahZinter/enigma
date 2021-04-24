@@ -58,6 +58,7 @@ class Enigma
     date_array = date.split('-').rotate(1)
     shortened_year = date_array.last.strip[-2, 2]
     date_array[-1] = shortened_year
+    date_array[0], date_array[1] = date_array[1], date_array[0]
     formatted_date = date_array.join
     formatted_date
   end

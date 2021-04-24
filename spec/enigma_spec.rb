@@ -191,7 +191,7 @@ describe Enigma do
 
       expect(expected[:key]).is_a? String
       expect(expected[:key].length).to eq 5
-      expect(expected[:date]).to eq '013121'
+      expect(expected[:date]).to eq '310121'
     end
   end
 
@@ -215,7 +215,7 @@ describe Enigma do
       expect(enigma.decrypt(encrypted[:encryption], '02715')).to eq ({
         decryption: 'hello world',
         key: '02715',
-        date: '013121'
+        date: '310121'
       })
     end
   end
@@ -227,7 +227,7 @@ describe Enigma do
       encrypted = enigma.encrypt('hello world', '02715')
       decrypted = enigma.decrypt(encrypted[:encryption], '02715')
 
-      expect(decrypted[:date]).to eq '013121'
+      expect(decrypted[:date]).to eq '310121'
     end
   end
 
