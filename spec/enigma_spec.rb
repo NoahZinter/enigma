@@ -38,7 +38,7 @@ describe Enigma do
   describe '#assign_keys' do
     it 'splits a 5 character string into 4 keys' do
       enigma = Enigma.new
-      total_key = ['1', '2', '3',' 4', '5']
+      total_key = ['1', '2', '3','4', '5']
       expect(enigma.assign_keys(total_key)).to eq ([12, 23, 34, 45])
     end
   end
@@ -66,6 +66,32 @@ describe Enigma do
       enigma = Enigma.new
       expect(enigma.rotate_letters('h').first).to eq 'h'
       expect(enigma.rotate_letters('z').first).to eq 'z'
+    end
+  end
+
+  describe '#decode_letter' do
+    it 'decodes a letter' do
+      enigma = Enigma.new
+      enigma.generate_key('002715')
+      enigma.offset_keys('040895')
+
+      expect(enigma.decode_letter('k', 3)).to eq 'h'
+    end
+
+    it 'will move to the next letter if it lands on a space' do
+      enigma = Enigma.new
+      enigma.generate_key('002715')
+      enigma.offset_keys('040895')
+
+      expect(enigma.decode_letter('a', 1)).to eq 'z'
+    end
+
+    it 'will leave non-registered characters alone' do
+      enigma = Enigma.new
+      enigma.generate_key('002715')
+      enigma.offset_keys('040895')
+
+      expect(enigma.decode_letter('?', 14)).to eq '?'
     end
   end
 
@@ -125,6 +151,26 @@ describe Enigma do
     end
   end
 
+  describe '#decode_message' do
+    it 'decodes a message' do
+      enigma = Enigma.new
+      enigma.generate_key('02715')
+      enigma.offset_keys('040895')
+      message = 'keder ohulw'
+
+      expect(enigma.decode_message(message)).to eq 'hello world'
+    end
+
+    it 'can handle incorrect inputs' do
+      enigma = Enigma.new
+      enigma.generate_key('02715')
+      enigma.offset_keys('040895')
+      message = 'kEdeR oHulW!&?'
+
+      expect(enigma.decode_message(message)).to eq 'hello world!&?'
+    end
+  end
+
   describe '#encrypt' do
     it 'returns a hash of encryption, key, date' do
       enigma = Enigma.new
@@ -139,12 +185,59 @@ describe Enigma do
     end
 
     it 'can return a full hash when only given a message' do
+      allow(Date).to receive(:today).and_return Date.new(2021, 01, 31)
       enigma = Enigma.new
       expected = enigma.encrypt('hello')
-      today = Date.today.to_s
 
       expect(expected[:key]).is_a? String
-      expect(expected[:date]).to eq today
+      expect(expected[:key].length).to eq 5
+      expect(expected[:date]).to eq '013121'
+    end
+  end
+
+  describe '#decrypt' do
+    it 'returns a hash of message, key, date' do
+      enigma = Enigma.new
+
+      expected = {
+        decryption: 'hello world',
+        key: '02715',
+        date: '040895'
+      }
+      expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq expected
+    end
+
+    it 'can decrypt using todays date' do
+      allow(Date).to receive(:today).and_return Date.new(2021, 01, 31)
+      enigma = Enigma.new
+      encrypted = enigma.encrypt('hello world', '02715')
+
+      expect(enigma.decrypt(encrypted[:encryption], '02715')).to eq ({
+        decryption: 'hello world',
+        key: '02715',
+        date: '013121'
+      })
+    end
+  end
+
+  describe '#format_date' do
+    it 'returns todays date in appropriate format' do
+      enigma = Enigma.new
+      allow(Date).to receive(:today).and_return Date.new(2021, 01, 31)
+      encrypted = enigma.encrypt('hello world', '02715')
+      decrypted = enigma.decrypt(encrypted[:encryption], '02715')
+
+      expect(decrypted[:date]).to eq '013121'
+    end
+  end
+
+  describe '#read_key' do
+    it 'returns the key properly formatted in case of random generation' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:generate_5) { '02715' }
+      encrypted = enigma.encrypt('hello world')
+
+      expect(encrypted[:key]).to eq '02715'
     end
   end
 end

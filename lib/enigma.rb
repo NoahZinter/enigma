@@ -6,14 +6,42 @@ class Enigma
     @offset = offset
   end
 
-  def encrypt(message, key = nil, date = Date.today.to_s)
+  def encrypt(message, key = nil, date = format_date)
     key_conditional(key)
     offset_keys(date)
     cipher = {}
     cipher[:encryption] = encode_message(message)
-    cipher[:key] = key
+    cipher[:key] = read_key
     cipher[:date] = date
     cipher
+  end
+
+  def decrypt(message, key, date = format_date)
+    key_conditional(key)
+    offset_keys(date)
+    decipher = {}
+    decipher[:decryption] = decode_message(message)
+    decipher[:key] = key
+    decipher[:date] = date
+    decipher
+  end
+
+  def normalize_key
+    string_key = @key.map { |number| number.to_s }
+    string_key.map do |string|
+      if string.length < 2
+        string.insert(0, '0')
+      else string
+      end
+    end.join.split('')
+  end
+
+  def read_key
+    total = normalize_key
+    indices_to_reject = [2, 4, 6]
+    total.reject.each_with_index do |number, index|
+      indices_to_reject.include?(index)
+    end.join
   end
 
   def key_conditional(key)
@@ -23,6 +51,15 @@ class Enigma
     else
       generate_key(key)
     end
+  end
+
+  def format_date
+    date = Date.today.to_s
+    date_array = date.split('-').rotate(1)
+    shortened_year = date_array.last.strip[-2, 2]
+    date_array[-1] = shortened_year
+    formatted_date = date_array.join
+    formatted_date
   end
 
   def rotate_letters(letter)
@@ -41,6 +78,32 @@ class Enigma
     else
       changed.first
     end
+  end
+
+  def decode_letter(letter, offset)
+    return letter if !@letters.include?(letter) || letter == ' '
+    offset = (offset * -1)
+    starting = rotate_letters(letter)
+    changed = starting.rotate(offset)
+    if changed.first == ' '
+      changed.rotate!(-1)
+      changed.first
+    else
+      changed.first
+    end
+  end
+
+  def decode_message(message)
+    offset = generate_total_offset
+    elements = message.downcase.split('')
+    repeat = elements.length
+    encoded = []
+      repeat.times do
+        encoded << decode_letter(elements.first, offset.first)
+        elements.rotate!(1)
+        offset.rotate!(1)
+      end
+    encoded.join
   end
 
   def encode_message(message)
