@@ -185,12 +185,13 @@ describe Enigma do
     end
 
     it 'can return a full hash when only given a message' do
+      allow(Date).to receive(:today).and_return Date.new(2021,01,31)
       enigma = Enigma.new
       expected = enigma.encrypt('hello')
-      today = Date.today.to_s
-
+      # require 'pry'; binding.pry
       expect(expected[:key]).is_a? String
-      expect(expected[:date]).to eq '042421'
+      expect(expected[:key].length).to eq 5
+      expect(expected[:date]).to eq '013121'
     end
   end
 
@@ -224,11 +225,21 @@ describe Enigma do
   describe '#format_date' do
     it 'returns todays date in appropriate format' do
       enigma = Enigma.new
-      # allow_any_instance_of(Date).to receive(:today) {'2021-04-24'}
+      allow(Date).to receive(:today).and_return Date.new(2021,01,31)
       encrypted = enigma.encrypt('hello world', '02715')
       decrypted = enigma.decrypt(encrypted[:encryption], '02715')
 
-      expect(decrypted[:date]).to eq '042421'
+      expect(decrypted[:date]).to eq '013121'
+    end
+  end
+
+  describe '#read_key' do
+    it 'returns the key properly formatted in case of random generation' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:generate_5) { '02715' }
+      encrypted = enigma.encrypt('hello world')
+
+      expect(encrypted[:key]).to eq '02715'
     end
   end
 end

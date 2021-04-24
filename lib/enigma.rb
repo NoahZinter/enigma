@@ -11,12 +11,12 @@ class Enigma
     offset_keys(date)
     cipher = {}
     cipher[:encryption] = encode_message(message)
-    cipher[:key] = key
+    cipher[:key] = read_key
     cipher[:date] = date
     cipher
   end
 
-  def decrypt(message, key = nil, date = format_date)
+  def decrypt(message, key, date = format_date)
     key_conditional(key)
     offset_keys(date)
     decipher = {}
@@ -24,6 +24,20 @@ class Enigma
     decipher[:key] = key
     decipher[:date] = date
     decipher
+  end
+
+  def read_key
+    string_key = @key.map { |number| number.to_s }
+    normalized_sk = string_key.map do |string|
+                      if string.length < 2
+                        string.insert(0, '0')
+                      else string
+                      end
+                    end.join.split('')
+    indices_to_reject = [2,4,6]
+    normalized_sk.reject.each_with_index do |number, index|
+                    indices_to_reject.include?(index)
+                  end.join
   end
 
   def key_conditional(key)
