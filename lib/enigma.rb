@@ -6,7 +6,7 @@ class Enigma
     @offset = offset
   end
 
-  def encrypt(message, key = nil, date = Date.today.to_s)
+  def encrypt(message, key = nil, date = format_date)
     key_conditional(key)
     offset_keys(date)
     cipher = {}
@@ -16,11 +16,11 @@ class Enigma
     cipher
   end
 
-  def decrypt(message, key = nil, date = Date.today.to_s)
+  def decrypt(message, key = nil, date = format_date)
     key_conditional(key)
     offset_keys(date)
     decipher = {}
-    decipher[:encryption] = decode_message(message)
+    decipher[:decryption] = decode_message(message)
     decipher[:key] = key
     decipher[:date] = date
     decipher
@@ -33,6 +33,15 @@ class Enigma
     else
       generate_key(key)
     end
+  end
+
+  def format_date
+    date = Date.today.to_s
+    date_array = date.split('-').rotate(1)
+    shortened_year = date_array.last.strip[-2,2]
+    date_array[-1] = shortened_year
+    formatted_date = date_array.join
+    formatted_date
   end
 
   def rotate_letters(letter)
