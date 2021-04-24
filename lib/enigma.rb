@@ -38,9 +38,9 @@ class Enigma
 
   def read_key
     total = normalize_key
-    indices_to_reject = [2,4,6]
+    indices_to_reject = [2, 4, 6]
     total.reject.each_with_index do |number, index|
-            indices_to_reject.include?(index)
+      indices_to_reject.include?(index)
     end.join
   end
 
@@ -56,7 +56,7 @@ class Enigma
   def format_date
     date = Date.today.to_s
     date_array = date.split('-').rotate(1)
-    shortened_year = date_array.last.strip[-2,2]
+    shortened_year = date_array.last.strip[-2, 2]
     date_array[-1] = shortened_year
     formatted_date = date_array.join
     formatted_date
