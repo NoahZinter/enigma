@@ -26,18 +26,22 @@ class Enigma
     decipher
   end
 
-  def read_key
+  def normalize_key
     string_key = @key.map { |number| number.to_s }
-    normalized_sk = string_key.map do |string|
-                      if string.length < 2
-                        string.insert(0, '0')
-                      else string
-                      end
-                    end.join.split('')
+    string_key.map do |string|
+      if string.length < 2
+        string.insert(0, '0')
+      else string
+      end
+    end.join.split('')
+  end
+
+  def read_key
+    total = normalize_key
     indices_to_reject = [2,4,6]
-    normalized_sk.reject.each_with_index do |number, index|
-                    indices_to_reject.include?(index)
-                  end.join
+    total.reject.each_with_index do |number, index|
+            indices_to_reject.include?(index)
+    end.join
   end
 
   def key_conditional(key)

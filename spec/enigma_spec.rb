@@ -185,7 +185,7 @@ describe Enigma do
     end
 
     it 'can return a full hash when only given a message' do
-      allow(Date).to receive(:today).and_return Date.new(2021,01,31)
+      allow(Date).to receive(:today).and_return Date.new(2021, 01, 31)
       enigma = Enigma.new
       expected = enigma.encrypt('hello')
 
@@ -199,17 +199,16 @@ describe Enigma do
     it 'returns a hash of message, key, date' do
       enigma = Enigma.new
 
-      expected = (
-      {
+      expected = {
         decryption: 'hello world',
         key: '02715',
         date: '040895'
-      })
+      }
       expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq expected
     end
 
     it 'can decrypt using todays date' do
-      allow(Date).to receive(:today).and_return Date.new(2021,01,31)
+      allow(Date).to receive(:today).and_return Date.new(2021, 01, 31)
       enigma = Enigma.new
       encrypted = enigma.encrypt('hello world', '02715')
 
@@ -224,7 +223,7 @@ describe Enigma do
   describe '#format_date' do
     it 'returns todays date in appropriate format' do
       enigma = Enigma.new
-      allow(Date).to receive(:today).and_return Date.new(2021,01,31)
+      allow(Date).to receive(:today).and_return Date.new(2021, 01, 31)
       encrypted = enigma.encrypt('hello world', '02715')
       decrypted = enigma.decrypt(encrypted[:encryption], '02715')
 
