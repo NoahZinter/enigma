@@ -13,7 +13,8 @@ encrypted_message = enigma.encrypt(incoming_text)
 key = encrypted_message[:key]
 date = encrypted_message[:date]
 message = encrypted_message[:encryption]
-puts "Created #{ARGV[1]} with key #{key} and date #{date}"
 
 write_handle.write(encrypted_message, message)
 write_handle.close
+
+puts "Created #{ARGV[1]} with key #{key} and date #{date}"
