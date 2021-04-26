@@ -74,7 +74,7 @@ class Enigma
     starting = rotate_letters(letter)
     changed = starting.rotate(offset)
     if changed.first == ' '
-      changed.rotate!(1)
+      changed.rotate!(offset)
       changed.first
     else
       changed.first
@@ -87,7 +87,7 @@ class Enigma
     starting = rotate_letters(letter)
     changed = starting.rotate(offset)
     if changed.first == ' '
-      changed.rotate!(-1)
+      changed.rotate!(offset)
       changed.first
     else
       changed.first
