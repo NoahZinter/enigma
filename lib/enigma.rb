@@ -99,16 +99,16 @@ class Enigma
   end
 
   def encode_message(message)
-      offset = generate_total_offset
-      elements = message.downcase.split('')
-      repeat = elements.length
-      encoded = []
-        repeat.times do
-          encoded << encode_letter(elements.first, offset.first)
-          elements.rotate!(1)
-          offset.rotate!(1)
-        end
-      encoded.join
+    offset = generate_total_offset
+    elements = message.downcase.split('')
+    repeat = elements.length
+    encoded = []
+      repeat.times do
+        encoded << encode_letter(elements.first, offset.first)
+        elements.rotate!(1)
+        offset.rotate!(1)
+      end
+    encoded.join
   end
 
   def generate_5
