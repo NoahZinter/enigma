@@ -16,4 +16,3 @@ puts "Created #{ARGV[1]} with key #{key} and date #{date}"
 
 write_handle.write(encrypted_message)
 write_handle.close
-
