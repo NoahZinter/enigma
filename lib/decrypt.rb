@@ -1,12 +1,16 @@
 require './lib/enigma'
 require 'date'
-require 'yaml'
 
 handle = File.open(ARGV[0], 'r')
 incoming_text = handle.read
 handle.close
-encrypted_hash = eval(incoming_text)
-encryption = encrypted_hash[:encryption]
+split_text = incoming_text.split("}")
+encryption = split_text[1].chop
+
+# encryption = split_text[2].delete!(["\n", ":key"])
+# require 'pry'; binding.pry
+# encrypted_hash = eval(incoming_text)
+# encryption = encrypted_hash[:encryption]
 
 decrypt_handle = File.open(ARGV[1], 'w')
 
