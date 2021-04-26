@@ -82,29 +82,20 @@ class Enigma
   end
 
   def decode_letter(letter, offset)
-    return letter if !@letters.include?(letter) || letter == ' '
-    offset = (offset * -1)
-    starting = rotate_letters(letter)
-    changed = starting.rotate(offset)
-    if changed.first == ' '
-      changed.rotate!(offset)
-      changed.first
-    else
-      changed.first
-    end
+    encode_letter(letter, offset * -1)
   end
 
   def decode_message(message)
     offset = generate_total_offset
     elements = message.downcase.split('')
     repeat = elements.length
-    encoded = []
+    decoded = []
       repeat.times do
-        encoded << decode_letter(elements.first, offset.first)
+        decoded << decode_letter(elements.first, offset.first)
         elements.rotate!(1)
         offset.rotate!(1)
       end
-    encoded.join
+    decoded.join
   end
 
   def encode_message(message)
@@ -124,6 +115,11 @@ class Enigma
     5.times.map{rand(5)}.join
   end
 
+  def generate_key(key)
+    total_key = key.split('')
+    assign_keys(total_key)
+  end
+
   def assign_keys(total_key)
     key_array = []
     key_a = total_key[0..1].join.to_i
@@ -132,11 +128,6 @@ class Enigma
     key_d = total_key[3..4].join.to_i
     key_array.push(key_a, key_b, key_c, key_d)
     @key = key_array
-  end
-
-  def generate_key(key)
-    total_key = key.split('')
-    assign_keys(total_key)
   end
 
   def offset_keys(date)

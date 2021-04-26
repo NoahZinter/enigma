@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-26T12:11:21-06:00">2021-04-26T12:11:21-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-26T16:43:52-06:00">2021-04-26T16:43:52-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         15.94
+         16.43
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>249</b> relevant lines,
-    <span class="green"><b>249</b> lines covered</span> and
+    <b>242</b> relevant lines,
+    <span class="green"><b>242</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#720ec010f1e8b534c16de78ef7e2bb00edab9f19" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">156</td>
-            <td class="cell--number">109</td>
-            <td class="cell--number">109</td>
+            <td class="cell--number">147</td>
+            <td class="cell--number">102</td>
+            <td class="cell--number">102</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">35.12</td>
+            <td class="cell--number">37.61</td>
             
           </tr>
         
@@ -123,8 +123,8 @@
     
 
     <div class="t-line-summary">
-      <b>109</b> relevant lines.
-      <span class="green"><b>109</b> lines covered</span> and
+      <b>102</b> relevant lines.
+      <span class="green"><b>102</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -488,8 +488,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="33">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="6" data-linenumber="33">
+            <span class="hits">6</span>
             
 
             
@@ -499,8 +499,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="16" data-linenumber="34">
-            <span class="hits">16</span>
+          <li class="covered" data-hits="14" data-linenumber="34">
+            <span class="hits">14</span>
             
 
             
@@ -928,8 +928,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="80" data-linenumber="73">
-            <span class="hits">80</span>
+          <li class="covered" data-hits="141" data-linenumber="73">
+            <span class="hits">141</span>
             
 
             
@@ -939,8 +939,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="68" data-linenumber="74">
-            <span class="hits">68</span>
+          <li class="covered" data-hits="120" data-linenumber="74">
+            <span class="hits">120</span>
             
 
             
@@ -950,8 +950,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="68" data-linenumber="75">
-            <span class="hits">68</span>
+          <li class="covered" data-hits="120" data-linenumber="75">
+            <span class="hits">120</span>
             
 
             
@@ -961,8 +961,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="68" data-linenumber="76">
-            <span class="hits">68</span>
+          <li class="covered" data-hits="120" data-linenumber="76">
+            <span class="hits">120</span>
             
 
             
@@ -1005,8 +1005,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="65" data-linenumber="80">
-            <span class="hits">65</span>
+          <li class="covered" data-hits="117" data-linenumber="80">
+            <span class="hits">117</span>
             
 
             
@@ -1066,111 +1066,12 @@
 
             
 
-            <code class="ruby">    return letter if !@letters.include?(letter) || letter == &#39; &#39;</code>
+            <code class="ruby">    encode_letter(letter, offset * -1)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="52" data-linenumber="86">
-            <span class="hits">52</span>
-            
-
-            
-
-            <code class="ruby">    offset = (offset * -1)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="52" data-linenumber="87">
-            <span class="hits">52</span>
-            
-
-            
-
-            <code class="ruby">    starting = rotate_letters(letter)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="52" data-linenumber="88">
-            <span class="hits">52</span>
-            
-
-            
-
-            <code class="ruby">    changed = starting.rotate(offset)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="52" data-linenumber="89">
-            <span class="hits">52</span>
-            
-
-            
-
-            <code class="ruby">    if changed.first == &#39; &#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="90">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      changed.rotate!(offset)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="91">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      changed.first</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="92">
-            
-            
-
-            
-
-            <code class="ruby">    else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="51" data-linenumber="93">
-            <span class="hits">51</span>
-            
-
-            
-
-            <code class="ruby">      changed.first</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="94">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="95">
+          <li class="never" data-hits="" data-linenumber="86">
             
             
 
@@ -1181,7 +1082,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="96">
+          <li class="never" data-hits="" data-linenumber="87">
             
             
 
@@ -1192,7 +1093,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="97">
+          <li class="covered" data-hits="1" data-linenumber="88">
             <span class="hits">1</span>
             
 
@@ -1203,7 +1104,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="98">
+          <li class="covered" data-hits="5" data-linenumber="89">
             <span class="hits">5</span>
             
 
@@ -1214,7 +1115,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="99">
+          <li class="covered" data-hits="5" data-linenumber="90">
             <span class="hits">5</span>
             
 
@@ -1225,7 +1126,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="100">
+          <li class="covered" data-hits="5" data-linenumber="91">
             <span class="hits">5</span>
             
 
@@ -1236,18 +1137,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="101">
+          <li class="covered" data-hits="5" data-linenumber="92">
             <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    encoded = []</code>
+            <code class="ruby">    decoded = []</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="102">
+          <li class="covered" data-hits="5" data-linenumber="93">
             <span class="hits">5</span>
             
 
@@ -1258,18 +1159,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="58" data-linenumber="103">
+          <li class="covered" data-hits="58" data-linenumber="94">
             <span class="hits">58</span>
             
 
             
 
-            <code class="ruby">        encoded &lt;&lt; decode_letter(elements.first, offset.first)</code>
+            <code class="ruby">        decoded &lt;&lt; decode_letter(elements.first, offset.first)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="58" data-linenumber="104">
+          <li class="covered" data-hits="58" data-linenumber="95">
             <span class="hits">58</span>
             
 
@@ -1280,7 +1181,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="58" data-linenumber="105">
+          <li class="covered" data-hits="58" data-linenumber="96">
             <span class="hits">58</span>
             
 
@@ -1291,7 +1192,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="106">
+          <li class="never" data-hits="" data-linenumber="97">
             
             
 
@@ -1302,18 +1203,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="107">
+          <li class="covered" data-hits="5" data-linenumber="98">
             <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    encoded.join</code>
+            <code class="ruby">    decoded.join</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="108">
+          <li class="never" data-hits="" data-linenumber="99">
             
             
 
@@ -1324,7 +1225,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="109">
+          <li class="never" data-hits="" data-linenumber="100">
             
             
 
@@ -1335,7 +1236,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="110">
+          <li class="covered" data-hits="1" data-linenumber="101">
             <span class="hits">1</span>
             
 
@@ -1346,112 +1247,211 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="7" data-linenumber="102">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">      offset = generate_total_offset</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="103">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">      elements = message.downcase.split(&#39;&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="104">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">      repeat = elements.length</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="105">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">      encoded = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="106">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">        repeat.times do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="74" data-linenumber="107">
+            <span class="hits">74</span>
+            
+
+            
+
+            <code class="ruby">          encoded &lt;&lt; encode_letter(elements.first, offset.first)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="74" data-linenumber="108">
+            <span class="hits">74</span>
+            
+
+            
+
+            <code class="ruby">          elements.rotate!(1)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="74" data-linenumber="109">
+            <span class="hits">74</span>
+            
+
+            
+
+            <code class="ruby">          offset.rotate!(1)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="110">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="7" data-linenumber="111">
             <span class="hits">7</span>
             
 
             
 
-            <code class="ruby">    offset = generate_total_offset</code>
+            <code class="ruby">      encoded.join</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="112">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="112">
+            
             
 
             
 
-            <code class="ruby">    elements = message.downcase.split(&#39;&#39;)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="113">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="113">
+            
             
 
             
 
-            <code class="ruby">    repeat = elements.length</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="114">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="1" data-linenumber="114">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    encoded = []</code>
+            <code class="ruby">  def generate_5</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="115">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="24" data-linenumber="115">
+            <span class="hits">24</span>
             
 
             
 
-            <code class="ruby">      repeat.times do</code>
+            <code class="ruby">    5.times.map{rand(5)}.join</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="74" data-linenumber="116">
-            <span class="hits">74</span>
+          <li class="never" data-hits="" data-linenumber="116">
+            
             
 
             
 
-            <code class="ruby">        encoded &lt;&lt; encode_letter(elements.first, offset.first)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="74" data-linenumber="117">
-            <span class="hits">74</span>
+          <li class="never" data-hits="" data-linenumber="117">
+            
             
 
             
 
-            <code class="ruby">        elements.rotate!(1)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="74" data-linenumber="118">
-            <span class="hits">74</span>
+          <li class="covered" data-hits="1" data-linenumber="118">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        offset.rotate!(1)</code>
+            <code class="ruby">  def generate_key(key)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="119">
-            
-            
-
+          <li class="covered" data-hits="21" data-linenumber="119">
+            <span class="hits">21</span>
             
 
-            <code class="ruby">      end</code>
+            
+
+            <code class="ruby">    total_key = key.split(&#39;&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="120">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="21" data-linenumber="120">
+            <span class="hits">21</span>
             
 
             
 
-            <code class="ruby">    encoded.join</code>
+            <code class="ruby">    assign_keys(total_key)</code>
           </li>
         </div>
       
@@ -1484,56 +1484,12 @@
 
             
 
-            <code class="ruby">  def generate_5</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="24" data-linenumber="124">
-            <span class="hits">24</span>
-            
-
-            
-
-            <code class="ruby">    5.times.map{rand(5)}.join</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="125">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="126">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="127">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">  def assign_keys(total_key)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="128">
+          <li class="covered" data-hits="22" data-linenumber="124">
             <span class="hits">22</span>
             
 
@@ -1544,7 +1500,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="129">
+          <li class="covered" data-hits="22" data-linenumber="125">
             <span class="hits">22</span>
             
 
@@ -1555,7 +1511,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="130">
+          <li class="covered" data-hits="22" data-linenumber="126">
             <span class="hits">22</span>
             
 
@@ -1566,7 +1522,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="131">
+          <li class="covered" data-hits="22" data-linenumber="127">
             <span class="hits">22</span>
             
 
@@ -1577,7 +1533,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="132">
+          <li class="covered" data-hits="22" data-linenumber="128">
             <span class="hits">22</span>
             
 
@@ -1588,7 +1544,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="133">
+          <li class="covered" data-hits="22" data-linenumber="129">
             <span class="hits">22</span>
             
 
@@ -1599,7 +1555,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="134">
+          <li class="covered" data-hits="22" data-linenumber="130">
             <span class="hits">22</span>
             
 
@@ -1610,7 +1566,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="135">
+          <li class="never" data-hits="" data-linenumber="131">
             
             
 
@@ -1621,7 +1577,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="136">
+          <li class="never" data-hits="" data-linenumber="132">
             
             
 
@@ -1632,35 +1588,79 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="137">
+          <li class="covered" data-hits="1" data-linenumber="133">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def generate_key(key)</code>
+            <code class="ruby">  def offset_keys(date)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="21" data-linenumber="138">
+          <li class="covered" data-hits="21" data-linenumber="134">
             <span class="hits">21</span>
             
 
             
 
-            <code class="ruby">    total_key = key.split(&#39;&#39;)</code>
+            <code class="ruby">    squared = (date.to_i**2).to_s</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="21" data-linenumber="139">
+          <li class="covered" data-hits="21" data-linenumber="135">
             <span class="hits">21</span>
             
 
             
 
-            <code class="ruby">    assign_keys(total_key)</code>
+            <code class="ruby">    squared_as_arry = squared.split(&#39;&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="21" data-linenumber="136">
+            <span class="hits">21</span>
+            
+
+            
+
+            <code class="ruby">    offset_keys = squared_as_arry.last(4)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="21" data-linenumber="137">
+            <span class="hits">21</span>
+            
+
+            
+
+            <code class="ruby">    @offset = offset_keys.map do |key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="84" data-linenumber="138">
+            <span class="hits">84</span>
+            
+
+            
+
+            <code class="ruby">      key.to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="139">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1693,111 +1693,12 @@
 
             
 
-            <code class="ruby">  def offset_keys(date)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="21" data-linenumber="143">
-            <span class="hits">21</span>
-            
-
-            
-
-            <code class="ruby">    squared = (date.to_i**2).to_s</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="21" data-linenumber="144">
-            <span class="hits">21</span>
-            
-
-            
-
-            <code class="ruby">    squared_as_arry = squared.split(&#39;&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="21" data-linenumber="145">
-            <span class="hits">21</span>
-            
-
-            
-
-            <code class="ruby">    offset_keys = squared_as_arry.last(4)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="21" data-linenumber="146">
-            <span class="hits">21</span>
-            
-
-            
-
-            <code class="ruby">    @offset = offset_keys.map do |key|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="84" data-linenumber="147">
-            <span class="hits">84</span>
-            
-
-            
-
-            <code class="ruby">      key.to_i</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="148">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="149">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="150">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="151">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">  def generate_total_offset</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="152">
+          <li class="covered" data-hits="13" data-linenumber="143">
             <span class="hits">13</span>
             
 
@@ -1808,7 +1709,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="52" data-linenumber="153">
+          <li class="covered" data-hits="52" data-linenumber="144">
             <span class="hits">52</span>
             
 
@@ -1819,7 +1720,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="154">
+          <li class="never" data-hits="" data-linenumber="145">
             
             
 
@@ -1830,7 +1731,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="155">
+          <li class="never" data-hits="" data-linenumber="146">
             
             
 
@@ -1841,7 +1742,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="156">
+          <li class="never" data-hits="" data-linenumber="147">
             
             
 
