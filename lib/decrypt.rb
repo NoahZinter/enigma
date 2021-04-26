@@ -7,11 +7,6 @@ handle.close
 split_text = incoming_text.split("}")
 encryption = split_text[1].chop
 
-# encryption = split_text[2].delete!(["\n", ":key"])
-# require 'pry'; binding.pry
-# encrypted_hash = eval(incoming_text)
-# encryption = encrypted_hash[:encryption]
-
 decrypt_handle = File.open(ARGV[1], 'w')
 
 key = ARGV[2].to_s
