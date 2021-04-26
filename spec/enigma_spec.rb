@@ -109,7 +109,7 @@ describe Enigma do
       enigma = Enigma.new
       enigma.generate_key('02715')
       enigma.offset_keys('040895')
-
+      require 'pry'; binding.pry
       expect(enigma.encode_letter('z', 1)).to eq 'a'
     end
 
